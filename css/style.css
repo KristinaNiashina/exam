@@ -13,7 +13,9 @@
 
 }
 
-
+/* *{
+    border: 1px solid black;
+} */
 
 body{
     font-size: 10px;
@@ -22,6 +24,7 @@ body{
     /* width:100%; */
     /* max-width: 330px; */
     margin:0;
+
 }
 
 .content{
@@ -91,18 +94,17 @@ body{
 
 .header__menu-logo{
     width:30px;
+    height: 30px;
 }
 .header__menu-logo svg{
     position: relative;
     z-index: 3;
+    width:40px;
+    height: 30px;
 }
 
 .header__menu__hide{
-    display: flex; gap:30px;
-    flex-wrap: wrap;
-    width: 250px;
-    padding: 0;
-    margin:0;
+    display: none;
 }
 
 .header__menu__hide li{
@@ -301,7 +303,7 @@ body{
         background-size: cover;
     }
     .header__logo img{
-        max-width: 18em;
+        max-width: 19em;
         margin-left: 0;
         margin-right: auto;
         vertical-align: top;
@@ -311,9 +313,10 @@ body{
     }
     .content__header{
         padding: 0px;
+        margin: 0 auto;
     }
     .header__subtitle_h1{
-        font-size: calc(5vw);
+        font-size: 5.5em;
         max-width: 600px;
         margin: 120px auto 0;
     }
@@ -321,9 +324,11 @@ body{
         position: absolute;
         right: 0; top: 65px;
         gap: 20px;
+        width:50px;
+        height: 50px;
     }
     .header__menu__hide{
-        width: 450px;
+        display: none;
     }
     .pop-up_close{
         background-size: 25px 25px;
@@ -331,6 +336,14 @@ body{
         width: 25px;
         top: -30px;
         right: 0;
+    }
+    .header__menu-logo{
+        width:40px;
+        height: 40px;
+    }
+    .header__menu-logo svg{
+        width:40px;
+        height: 40px;
     }
 }
 
@@ -358,7 +371,10 @@ body{
     }
     .header__menu{
         position: absolute;
-        right: 0; top: 40px;
+        right: 0; top: 50px;
+        gap: 20px;
+        width:440px;
+        height: 30px;
     }
     .pop-up_close{
         background-size: 20px 20px;
@@ -366,6 +382,13 @@ body{
         width: 20px;
         top: -25px;
         right: 0;
+    }
+    .header__menu__hide{
+    display: flex; gap:30px;
+    flex-wrap: nowrap;
+    width: 440px;
+    padding: 0;
+    margin:0;
     }
 }
 
@@ -530,6 +553,30 @@ body{
     border-color: rgba(181, 159, 91, 0.6); 
 }
 
+@media (max-width:640px) and (orientation:landscape){
+    .main__trends-items{
+        display: flex; gap: 4px;
+        flex-wrap: wrap;
+        justify-content:space-between;
+    }
+    .main__trends-item__garden{
+        width: calc(50% - 2px);
+        background-size: cover;
+    }
+    .main__trends-item__cheese{
+        width: calc(50% - 2px);
+        background-size: cover;
+    }
+    .main__trends-item__hiking{
+        width: calc(50% - 2px);
+        background-size: cover;
+    }
+    .main__trends-item__lemonade{
+        width: calc(50% - 2px);
+        background-size: cover;
+    }
+}
+
 @media(min-width:768px){
     .main__trends-items{
         display: flex; gap: 4px;
@@ -558,6 +605,52 @@ body{
     }
     .main__trends__title::before{
         left: 30px;
+    }
+}
+@media (min-width:641px) and (max-width:1200px)  and (orientation:portrait) {
+    .main__trends-items{
+        display: flex; gap: 4px;
+        flex-wrap: wrap;
+        justify-content:space-between;
+    }
+    .main__trends-item__garden{
+        width: calc(50% - 2px);
+        background-size: cover;
+    }
+    .main__trends-item__cheese{
+        width: calc(50% - 2px);
+        background-size: cover;
+    }
+    .main__trends-item__hiking{
+        width: calc(50% - 2px);
+        background-size: cover;
+    }
+    .main__trends-item__lemonade{
+        width: calc(50% - 2px);
+        background-size: cover;
+    }
+}
+@media (min-width:641px) and (max-width:1200px) and (min-height: 641px) and (orientation:landscape) {
+    .main__trends-items{
+        display: flex; gap: 1px;
+        flex-wrap: wrap;
+        justify-content:space-between;
+    }
+    .main__trends-item__garden{
+        width: calc(24.5% - 0.5px);
+        background-size: cover;
+    }
+    .main__trends-item__cheese{
+        width: calc(24.5% - 0.5px);
+        background-size: cover;
+    }
+    .main__trends-item__hiking{
+        width: calc(24.5% - 0.5px);
+        background-size: cover;
+    }
+    .main__trends-item__lemonade{
+        width: calc(24.5% - 0.5px);
+        background-size: cover;
     }
 }
 
@@ -696,14 +789,14 @@ body{
 .box_img{
     position:relative;
     padding-bottom: 294px;
-    padding-right: 381px;
 }
 
 .main__post-list__item-photo{
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    max-width: 100%;
+    width: auto;
     height: 100%;
 }
 
@@ -1026,7 +1119,11 @@ body{
         padding-right: 0;
         padding-top: 0;
     }
-
+    .box_img{
+        position:relative;
+        padding-bottom: 294px;
+        padding-right: 381px;
+    }
 
 
     .main__post-list{
@@ -1111,15 +1208,15 @@ body{
 
 .shop__item__photo img{
     max-width: 100%;
+    width: auto;
+    height: 100%;
     text-align: center;
     object-fit:cover; 
-    padding-left: 30px;
-    padding-right: 30px;
 }
 
 .shop__item{
     vertical-align: middle;
-    /* height: 500px; */
+    text-align: center;
 }
 
 .shop__item__description__title{
@@ -1129,6 +1226,8 @@ body{
     margin: 0;
     padding: 50px 0 10px 0;
 }
+
+
 
 .shop__item__description__item{
     font-size: 15px;
@@ -1194,25 +1293,38 @@ body{
     height: 250px;
     padding-left: 30px;
     padding-right: 30px;
+    max-width: 500px;
 }
 
 @media(min-width:768px){
     .shop__item{
         width:calc(50% - 5px);
+        text-align: center;
     }
     .shop__items{
         display: flex; gap: 10px;
         flex-wrap: wrap;
         justify-content: space-between;
+        margin: 0 auto;
     }
-    .shop__item__photo img, .shop__item__description{
+    .shop__item__description{
         padding-left: 30px;
         padding-right: 30px;
     }
     .shop__item__description{
         width: 317px;
     }
+    .shop__item__photo img{
+        max-width: 350px;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        object-fit:cover; 
+    }
+
 }
+
+    
 
 @media(min-width:1600px){
     .shop__title{
